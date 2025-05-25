@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event Calendar</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<nav class="navbar">
+  <div class="logo">
+    <img src="USC_university_seal.svg.png" alt="CampusConnect Logo" class="logo-img" />
+    CampusConnect
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html" aria-current="page">Home</a></li>
+    <li><a href="calendar.html">Events</a></li>
+    <li><a href="lostfound.html">Lost & Found</a></li>
+    <li><a href="clubs.html">Clubs</a></li>
+  </ul>
+</nav>
+
+  <div class="container">
+    <h1>Event Calendar</h1>
+
+    <div class="calendar-card">
+      <h2>May, 2025 Events</h2>
+
+      <div class="event">
+        <div class="event-time">May 1 - 7</div>
+        <div class="event-details">
+          <strong>AFINITY WEEK</strong>
+          <p>Join us for a week of fun and laughter!</p>
+          <button onclick="addToCalendar('AFINITY WEEK', '2025-05-01')">Add to Calendar</button>
+        </div>
+      </div>
+
+      <div class="event">
+        <div class="event-time">May 8 - 25</div>
+        <div class="event-details">
+          <strong>USC DAYS</strong>
+          <p>Days of competition, joy and unity!</p>
+          <button onclick="addToCalendar('USC DAYS', '2025-05-08')">Add to Calendar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function addToCalendar(title, datetime) {
+      alert(`Reminder set for "${title}" at ${new Date(datetime).toLocaleString()}`);
+    }
+  </script>
+</body>
+</html>

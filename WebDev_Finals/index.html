@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CampusConnect</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">
+    <img src="USC_university_seal.svg.png" alt="CampusConnect Logo" class="logo-img" />
+    CampusConnect
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html" aria-current="page">Home</a></li>
+    <li><a href="calendar.html">Events</a></li>
+    <li><a href="lostfound.html">Lost & Found</a></li>
+    <li><a href="clubs.html">Clubs</a></li>
+  </ul>
+</nav>
+
+  <main class="container">
+    <section class="card" style="text-align: center; padding: 3rem 2rem;">
+      <h1 style="font-size: 3rem; margin-bottom: 1rem; color: var(--primary-dark);">
+        Welcome to CampusConnect
+      </h1>
+      <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 2rem;">
+        Your one-stop platform to stay connected with campus events, clubs, and community resources.
+      </p>
+      <button 
+        onclick="window.location.href='calendar.html'" 
+        style="
+          padding: 1rem 2.5rem; 
+          background: var(--highlight-color); 
+          border: none; 
+          border-radius: 24px; 
+          font-weight: 700; 
+          font-size: 1.1rem; 
+          cursor: pointer;
+          color: var(--text-color);
+          transition: background-color 0.3s ease, transform 0.3s ease;
+        "
+        onmouseover="this.style.backgroundColor='#ffdb33'; this.style.transform='scale(1.05)';"
+        onmouseout="this.style.backgroundColor='var(--highlight-color)'; this.style.transform='scale(1)';"
+      >
+        Explore Events
+      </button>
+    </section>
+
+    <section class="card" style="max-width: 900px; margin: 3rem auto 0;">
+      <h2 style="color: var(--primary-dark); margin-bottom: 1.5rem; text-align: center;">Why use CampusConnect?</h2>
+      <ul style="list-style: none; display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; padding: 0;">
+        <li style="flex: 1 1 250px; background: #f9fff5; border-radius: var(--border-radius); padding: 1.5rem; box-shadow: var(--shadow); border-left: 6px solid var(--primary-color);">
+          <h3>📅 Events & Reminders</h3>
+          <p>Stay up to date by viewing upcoming campus events and setting reminders.</p>
+        </li>
+        <li style="flex: 1 1 250px; background: #fffdf2; border-radius: var(--border-radius); padding: 1.5rem; box-shadow: var(--shadow); border-left: 6px solid var(--highlight-color);">
+          <h3>🧦 Lost & Found</h3>
+          <p>Post items you’ve lost or found and help reconnect belongings to their owners.</p>
+        </li>
+        <li style="flex: 1 1 250px; background: #f0fff7; border-radius: var(--border-radius); padding: 1.5rem; box-shadow: var(--shadow); border-left: 6px solid var(--primary-dark);">
+          <h3>🎓 Clubs Directory</h3>
+          <p>Discover student clubs and groups to join and get involved on campus.</p>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+</body>
+</html>

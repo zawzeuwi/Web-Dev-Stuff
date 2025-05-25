@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lost & Found</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<nav class="navbar">
+  <div class="logo">
+    <img src="USC_university_seal.svg.png" alt="CampusConnect Logo" class="logo-img" />
+    CampusConnect
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html" aria-current="page">Home</a></li>
+    <li><a href="calendar.html">Events</a></li>
+    <li><a href="lostfound.html">Lost & Found</a></li>
+    <li><a href="clubs.html">Clubs</a></li>
+  </ul>
+</nav>
+
+  <div class="container">
+    <h1>Lost & Found Board</h1>
+
+    <form id="postForm">
+      <input type="text" id="itemName" placeholder="Item Name" required />
+      <input type="text" id="itemDesc" placeholder="Description or Location" required />
+      <button type="submit">Post</button>
+    </form>
+
+    <div id="posts"></div>
+  </div>
+
+  <script>
+    const form = document.getElementById('postForm');
+    const postsDiv = document.getElementById('posts');
+    const posts = JSON.parse(localStorage.getItem('posts')) || [];
+
+    function displayPosts() {
+      postsDiv.innerHTML = '';
+      posts.forEach((post, index) => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `<strong>${post.name}</strong><p>${post.desc}</p>`;
+        postsDiv.appendChild(card);
+      });
+    }
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const name = document.getElementById('itemName').value;
+      const desc = document.getElementById('itemDesc').value;
+      posts.push({ name, desc });
+      localStorage.setItem('posts', JSON.stringify(posts));
+      form.reset();
+      displayPosts();
+    });
+
+    displayPosts();
+  </script>
+</body>
+</html>
